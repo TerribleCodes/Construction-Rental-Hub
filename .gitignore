@@ -1,0 +1,9 @@
+# Server Modules
+server/node_modules
+
+# Client Modules
+client/node_modules
+
+# Keep the .gitignore file in the client folder.
+client/.gitignore 
+
