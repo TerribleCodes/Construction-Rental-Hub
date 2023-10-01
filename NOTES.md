@@ -14,7 +14,7 @@
     npm init # As I remember 😅
 ```
 
-## To run the both client and server at the same time, PowerShell or Git Bash (recommended) can be used
+## To run the both client and server at the same time, PowerShell or Git Bash can be used. Before running the script, install the dependencies first
 
 ```shell
     # PowerShell
@@ -44,3 +44,5 @@
     cd client
     npm start
 ```
+
+- `admin123`
