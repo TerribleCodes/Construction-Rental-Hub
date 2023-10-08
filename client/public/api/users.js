@@ -106,15 +106,15 @@ app.post( "/post" , function ( req, res ) {
             "username": req.body.username,
             "password": btoa(req.body.password),
             "fullname": req.body.fullname,
-            "perm_products": req.body.perm_products == "on" ? 1 : 0,
-            "perm_categories": req.body.perm_categories == "on" ? 1 : 0,
-            "perm_transactions": req.body.perm_transactions == "on" ? 1 : 0,
-            "perm_users": req.body.perm_users == "on" ? 1 : 0,
-            "perm_settings": req.body.perm_settings == "on" ? 1 : 0,
+            "perm_products": req.body.perm_products === "on" ? 1 : 0,
+            "perm_categories": req.body.perm_categories === "on" ? 1 : 0,
+            "perm_transactions": req.body.perm_transactions === "on" ? 1 : 0,
+            "perm_users": req.body.perm_users === "on" ? 1 : 0,
+            "perm_settings": req.body.perm_settings === "on" ? 1 : 0,
             "status": ""
           }
 
-    if(req.body.id == "") { 
+    if(req.body.id === "") { 
        User._id = Math.floor(Date.now() / 1000);
        usersDB.insert( User, function ( err, user ) {
             if ( err ) res.status( 500 ).send( req );
@@ -129,11 +129,11 @@ app.post( "/post" , function ( req, res ) {
                             username: req.body.username,
                             password: btoa(req.body.password),
                             fullname: req.body.fullname,
-                            perm_products: req.body.perm_products == "on" ? 1 : 0,
-                            perm_categories: req.body.perm_categories == "on" ? 1 : 0,
-                            perm_transactions: req.body.perm_transactions == "on" ? 1 : 0,
-                            perm_users: req.body.perm_users == "on" ? 1 : 0,
-                            perm_settings: req.body.perm_settings == "on" ? 1 : 0
+                            perm_products: req.body.perm_products === "on" ? 1 : 0,
+                            perm_categories: req.body.perm_categories === "on" ? 1 : 0,
+                            perm_transactions: req.body.perm_transactions === "on" ? 1 : 0,
+                            perm_users: req.body.perm_users === "on" ? 1 : 0,
+                            perm_settings: req.body.perm_settings === "on" ? 1 : 0
                         }
                     }, {}, function (
             err,
