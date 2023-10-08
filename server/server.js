@@ -16,6 +16,7 @@ const PORT = process.env.PORT; // server port
 app.get("/customers", (req, res) => {
   async function fetchDataCustomers() {
     try {
+     
       const connection = await oracledb.getConnection({
         user: "HR",
         password: "123",
