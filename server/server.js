@@ -8,7 +8,6 @@ const cors = require("cors");
 const app = express(); // create express app
 app.use(express.json()); // Parse JSON request bodies
 app.use(cors()); //
-
 dotenv.config(); // read .env file
 
 const PORT = process.env.PORT; // server port
@@ -43,7 +42,7 @@ app.get("/customers", (req, res) => {
 app.post("/insert-customer", async (req, res) => {
   try {
     const connection = await oracledb.getConnection({
-      user: "HR",
+      user: "hr_xe",
       password: "123",
       connectString: "localhost/xe",
     });

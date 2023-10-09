@@ -59,6 +59,34 @@
     <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#search').on('input', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                
+                // Show or hide product containers based on search term
+                $('.col-md-2').each(function() {
+                    var productText = $(this).find('.centered-text').text().toLowerCase();
+                    if (productText.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+    
+            // Add click event handler for the image buttons
+            $('.image-button').on('click', function (e) {
+                // Handle the image button click here
+                e.preventDefault(); // Prevent the default link behavior if needed
+                // Your code to handle the click event goes here
+            });
+        });
+    </script>
+    
+    
+
 
     </head>
   <body>
@@ -75,7 +103,7 @@
                         
                             <div class="btn-group p_one">
                             <button id="productModal" data-toggle="modal" data-target="#Products" type="button" class="btn btn-default waves-effect waves-light">
-                                    <span class="btn-label"><i class=" 	glyphicon glyphicon-barcode"></i> </span>  Products   
+                                    <span class="btn-label"><i class=" 	glyphicon glyphicon-barcode"></i> </span> Add Products   
                             </button>
                             <button id="newProductModal" data-toggle="modal" data-target="#newProduct" type="button" class="btn btn-warning waves-effect waves-light">
                                     <i class="fa fa-plus"></i> 
@@ -342,24 +370,172 @@
               </div>
           </div>
           <div class="col-md-8">
-              <div class="card-box">
-                  <div class="row">
-                      <div class="col-md-4">
-                          <input type="text" id="search" class="form-control" placeholder="Search product by name or sku">
-                      </div>
-                      <div class="col-md-8">
-                          <div class="" id="categories">
-                              
-                          </div>
-                      </div>
-                  </div>
-                  <hr>
-                  <div class="row" id="parent"> 
-                      
-                  </div>
-  
-              </div>
-          </div>
+            <div class="card-box">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" id="search" class="form-control" placeholder="Search product by name">
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <div class="" id="categories"></div>
+                    </div>
+                </div>
+                <hr>
+              <div class="container" style="height: 510px; overflow-y: auto;">   <!--Add a scrollable to the container-->
+                <div class="row" id="parent">   <!--Adding images-->
+                    <div class="col-md-2" id="scaffoldings">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/scaff.png" alt="Scaffoldings">
+                            </div>
+                            <div class="centered-text">Scaffoldings</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="handdrill">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/handdrill.jpg" alt="Hand Drill">
+                            </div>
+                            <div class="centered-text">Hand Drill</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="willbarrow">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/will.jpeg" alt="Will">
+                            </div>
+                            <div class="centered-text">Willbarrow</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="acrojack">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/acro.jpg" alt="acro">
+                            </div>
+                            <div class="centered-text">Acro Jack</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="ladder">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/ladder.jpeg" alt="ladder">
+                            </div>
+                            <div class="centered-text">Ladder</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="pipe">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/GIPipe.jpeg" alt="pipe">
+                            </div>
+                            <div class="centered-text">GI Pipe</div>
+                        </a>
+                    </div>
+                    <!-- Add more image buttons as needed with col-md-1 class -->
+                    <div class="col-md-2" id="tilecutter">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/tilecutter.png" alt="tile">
+                            </div>
+                            <div class="centered-text">Tile Cutter</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="grinder">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/grinder.jpeg" alt="grinder">
+                            </div>
+                            <div class="centered-text">Grinder</div>
+                        </a>
+                    </div>
+                   
+                    <div class="col-md-2" id="barcutter">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/barcutter.jpeg" alt="barcutter">
+                            </div>
+                            <div class="centered-text">Bar Cutter</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id=" concretemixer">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/mixer.jpeg" alt="mixer">
+                            </div>
+                            <div class="centered-text">Concrete Mixer</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="columnbox">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/columnbox.jpeg" alt="columnbox">
+                            </div>
+                            <div class="centered-text">Column Box</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="hoist">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/hoist.jpeg" alt="hoist">
+                            </div>
+                            <div class="centered-text">Hoist</div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2" id="chainsaw">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/chainsaw.jpg" alt="chainsaw">
+                            </div>
+                            <div class="centered-text">Chainsaw</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="weldingmachine">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/weldingma.png" alt="welding">
+                            </div>
+                            <div class="centered-text">Welding Machine</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="watermotor">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/watermotor.jpg" alt="watermotor">
+                            </div>
+                            <div class="centered-text">Watermotor</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="highpreasuregun">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/highpre.jpg" alt="highpre">
+                            </div>
+                            <div class="centered-text">High Preasure Gun</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="router">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/router.jpg" alt="router">
+                            </div>
+                            <div class="centered-text">Router</div>
+                        </a>
+                    </div>
+                    <div class="col-md-2" id="extensioncode">
+                        <a href="#" class="image-button">
+                            <div class="image-container">
+                                <img src="assets/images/wire.jpeg" alt="pipe">
+                            </div>
+                            <div class="centered-text">Extension Code</div>
+                        </a>
+                    </div>
+                </div>
+             </div>
+                
+            </div>
+        </div>
+        
       </div>
   </div>
   
@@ -585,7 +761,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="mySmallModalLabel">Product
+                    <h4 class="modal-title" id="mySmallModalLabel">Add Product
                         <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
                     </h4>
                 </div>

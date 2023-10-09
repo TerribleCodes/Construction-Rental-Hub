@@ -6,6 +6,7 @@
 .btn-md {
   padding: 8px 16px;
 }
+
 .btn-primary,
 .btn-success,
 .btn-default,
@@ -991,4 +992,11 @@ ul.ColVis_collection li {
 .radio-pink input[type="radio"]:checked + label::after {
   background-color: #fb6d9d;
 }
+
+.image-container img {
+  /* Set your desired width and height here */
+  width: 100%; /* Example: 100% means the image will take the full width of its container */
+  height: auto; /* This maintains the image's aspect ratio */
+}
+
 
