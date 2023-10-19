@@ -28,7 +28,8 @@
 .btn-default:focus,
 .btn-default:hover,
 .open > .dropdown-toggle.btn-default {
-  background-color: #5fbeaa !important;
+  /* button of add products, catogaries,transaction,users */
+  background-color: #0C356A !important;
   border: 1px solid #5fbeaa !important;
 }
 .btn-white,
@@ -104,7 +105,8 @@
 .btn-success:focus,
 .btn-success:hover,
 .open > .dropdown-toggle.btn-success {
-  background-color: #81c868 !important;
+  /* button for payment */
+  background-color: #1AACAC !important;
   border: 1px solid #81c868 !important;
 }
 .btn-info,
@@ -117,7 +119,8 @@
 .btn-info:focus,
 .btn-info:hover,
 .open > .dropdown-toggle.btn-info {
-  background-color: #34d3eb !important;
+  /* button for open tabs, customer order */
+  background-color: #0C356A !important;
   border: 1px solid #34d3eb !important;
 }
 .btn-warning,
@@ -130,7 +133,8 @@
 .btn-warning:focus,
 .btn-warning:hover,
 .open > .dropdown-toggle.btn-warning {
-  background-color: #ffbd4a !important;
+  /* button for + mark  */
+  background-color: #279EFF !important;
   border: 1px solid #ffbd4a !important;
 }
 .btn-danger,
@@ -143,7 +147,7 @@
 .btn-danger:focus,
 .btn-danger:hover,
 .open > .dropdown-toggle.btn-danger {
-  background-color: #f05050 !important;
+  background-color: #FF0060 !important;
   border: 1px solid #f05050 !important;
 }
 .btn-inverse,
@@ -316,7 +320,7 @@
 .table > thead > tr.active > th,
 .table > tbody > tr.active > th,
 .table > tfoot > tr.active > th {
-  background-color: #f4f8fb !important;
+  background-color: #aed7f6 !important;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -341,14 +345,14 @@
   border-bottom: 2px solid #ebeff2;
 }
 tbody {
-  color: #797979;
+  color: #e1d6d6;
 }
 th {
   color: #666666;
   font-weight: 600;
 }
 .table-bordered {
-  border: 1px solid #ebeff2;
+  border: 1px solid #060606;
 }
 table.focus-on tbody tr.focused th {
   background-color: #5fbeaa;
@@ -446,7 +450,7 @@ table.focus-on tbody tr.focused td {
   padding: 5px;
 }
 #datatable-editable .form-control {
-  background-color: #ffffff;
+  background-color: #f4e7e7;
   width: 100%;
 }
 #datatable-editable .fa-trash-o {
@@ -548,7 +552,7 @@ table[data-toggle="table"] {
 }
 /* Tablesaw */
 .tablesaw thead {
-  background: #ebeff2;
+  background: #647d90;
   background-image: none;
   border: none;
 }
@@ -726,7 +730,7 @@ ul.ColVis_collection li {
 .checkbox label::before {
   -o-transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
-  background-color: #ffffff;
+  background-color: #d8a2a2;
   border-radius: 3px;
   border: 1px solid #cccccc;
   content: "";
