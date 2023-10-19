@@ -60,6 +60,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- script for search the product in main page -->
     <script>
         $(document).ready(function () {
             $('#search').on('input', function () {
@@ -84,8 +85,10 @@
             });
         });
     </script>
-    
-    
+   
+      
+      
+
 
 
     </head>
@@ -99,7 +102,7 @@
         <div class="row">
                 <div class="col-sm-12">
 
-                             <div class="button-list pull-left m-t-15 m-l-10">  
+                    <div class="button-list pull-left m-t-15 m-l-10">  
                         
                             <div class="btn-group p_one">
                             <button id="productModal" data-toggle="modal" data-target="#Products" type="button" class="btn btn-default waves-effect waves-light">
@@ -132,7 +135,7 @@
 
 
                     
-                    <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                    <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
 
                     <div class="button-list pull-right m-t-15 m-l-10">  
 
@@ -339,9 +342,9 @@
                          <div class="col-md-3">: <span id="price">0.0</span></div>
                      </div>
                      <div class="row">
-                         <div class="col-md-3">Discount</div>
+                         <div class="col-md-3">Advance Payment</div>
                          <div class="col-md-3"><input class="form-control" type="number" id="inputDiscount" oninput="$(this).calculateCart();"></div>
-                         <div class="col-md-3">Gross Price (inc <span id="taxInfo"></span>% Tax)</div>
+                         <!-- <div class="col-md-3">Gross Price (inc <span id="taxInfo"></span>% Tax)</div> -->
                          <div class="col-md-3"><h3 id="gross_price">0.00</h3></div>
                      </div>
   
@@ -381,7 +384,7 @@
                     </div>
                 </div>
                 <hr>
-              <div class="container" style="height: 510px; overflow-y: auto;">   <!--Add a scrollable to the container-->
+              <div class="container" style="height: 525px; overflow-y: auto;">   <!--Add a scrollable to the container-->
                 <div class="row" id="parent">   <!--Adding images-->
                     <div class="col-md-2" id="scaffoldings">
                         <a href="#" class="image-button">
@@ -545,7 +548,7 @@
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   <h4 class="modal-title" id="mySmallModalLabel">Hold Order
-                      <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                      <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                   </h4>
               </div>
               <div class="modal-body">
@@ -725,7 +728,7 @@
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   <h4 class="modal-title" id="mySmallModalLabel">New Customer
-                      <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                      <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                   </h4>
               </div>
               <div class="modal-body">
@@ -762,11 +765,11 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" id="mySmallModalLabel">Add Product
-                        <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                        <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form id="saveProduct" encType="multipart/form-data">
+                    <form id="saveProduct" encType="multipart/form-data" action="http://localhost:5000/submit-form" method="post">
                         <input type="hidden" name="id" id="product_id">
                         <input type="hidden" name="img" id="img">
                         <input type="hidden" name="remove" id="remove_img">
@@ -776,7 +779,7 @@
                         </div>
                         <div class="form-group">
                             <label for="userName">Product Name</label>
-                            <input type="text" required="required"  name="name" parsley-trigger="change" placeholder="Enter a product name" class="form-control" id="productName">
+                            <input type="text"   name="name" parsley-trigger="change" placeholder="Enter a product name" class="form-control" id="productName">
                         </div>
                         <div class="form-group">
                             <label for="userName">Price</label>
@@ -809,7 +812,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="mySmallModalLabel">Category
-                            <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                            <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                         </h4>
                     </div>
                     <div class="modal-body">
@@ -828,14 +831,14 @@
      </div>
 
 
-
+<!-- Products -->
      <div id="Products" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="mySmallModalLabel">Products
-                            <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                            <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                             <button class="btn btn-white pull-right" id="print_list">Download</button>
                         </h4>                        
                     </div>
@@ -869,7 +872,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" id="mySmallModalLabel">Users
-                        <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                        <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                      </h4>                        
                 </div>
                  <div class="modal-body" id="all_userss" style="padding: 20px; padding-right: 40px;"> 
@@ -899,7 +902,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="mySmallModalLabel">Categories
-                            <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                            <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                         </h4>
                     </div>
                     <div class="modal-body">
@@ -926,7 +929,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" id="mySmallModalLabel">Account Infomarion
-                        <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                        <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -1049,7 +1052,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="mySmallModalLabel">Settings
-                            <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt="">
+                            <!-- <img  class="loading m-t-5" style="margin-left: 35%" height="50px" src="assets/images/loading.gif" alt=""> -->
                         </h4>
                     </div>
                     <div class="modal-body">  
@@ -1215,6 +1218,10 @@ require('./renderer.js');
       });
 
      </script>
+
+
+
+  
 
   </body>
 </html>

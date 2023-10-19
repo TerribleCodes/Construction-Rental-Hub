@@ -2,11 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300);
 
 body {
-  background: #ebeff2;
+  /* Change the background color here */
+  background: #bcdbf2;
   font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   overflow-x: hidden;
-  color: #797979;
+  color: #0b0a0a;
 }
 html {
   position: relative;
@@ -321,7 +322,7 @@ a:focus {
 /* Card Box */
 .card-box {
   padding: 20px;
-  border: 1px solid rgba(54, 64, 74, 0.05);
+  border: 2px solid rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -331,7 +332,7 @@ a:focus {
 }
 /* Grid page */
 .grid-structure .grid-container {
-  background-color: #f4f8fb;
+  background-color: #ffffff;
   margin-bottom: 10px;
   padding: 10px 20px;
 }
@@ -455,7 +456,7 @@ a:focus {
   -o-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
   border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(49, 42, 42, 0.26);
 }
 .dropdown-menu > li > a {
   padding: 6px 20px;
@@ -551,11 +552,12 @@ a:focus {
 textarea.form-control {
   min-height: 90px;
 }
+/* Change color of search bars */
 .form-control {
-  background-color: #FFFFFF;
-  border: 1px solid #E3E3E3;
+  background-color: #f4faf6;
+  border: 1px solid #000000;
   border-radius: 4px;
-  color: #565656;
+  color: #000000;
   padding: 7px 12px;
   height: 38px;
   max-width: 100%;
