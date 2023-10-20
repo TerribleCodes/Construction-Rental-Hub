@@ -14,15 +14,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-f
 
 const PORT = process.env.PORT; // server port
 
+// Route to test the server
 app.post("/submit-form", (req, res) => {
   const formData = req.body;
-  // Process the form data here, e.g., save it to a database
   console.log(`Backend works  but form data doesn't pass to backend`);
-
-  // Send a response back to the client
   res.status(200).json({ message: "Form data received and processed." });
 });
 
+// Route to test the database connection
 app.get("/customers", (req, res) => {
   async function fetchDataCustomers() {
     try {
@@ -75,6 +74,14 @@ app.post("/insert-customer", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// TODO
+
+// CRUD for the customers_table
+
+// CRUD for the products_table
+
+// CRUD for the rental_information table
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
