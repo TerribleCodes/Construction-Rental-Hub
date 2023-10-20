@@ -1213,20 +1213,23 @@
               <div class="modal-body">
                 <form
                   id="saveProduct"
-                  enctype="multipart/form-data"
+                  enctype="application/json"
                   action="http://localhost:5000/submit-form"
                   method="post"
                 >
-                  <input type="hidden" name="id" id="product_id" />
+                  <!-- <input type="hidden" name="id" id="product_id" />
                   <input type="hidden" name="img" id="img" />
-                  <input type="hidden" name="remove" id="remove_img" />
+                  <input type="hidden" name="remove" id="remove_img" /> -->
                   <div class="form-group">
-                    <label for="userName">Category</label>
-                    <select
-                      name="category"
+                    <label for="userName">Product Id</label>
+                    <input
+                      type="text"
+                      name="product"
+                      parsley-trigger="change"
+                      placeholder="Enter a product id"
                       class="form-control"
-                      id="category"
-                    ></select>
+                      id="product_id"
+                    />
                   </div>
                   <div class="form-group">
                     <label for="userName">Product Name</label>
@@ -1260,7 +1263,7 @@
                       id="quantity"
                     />
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label
                       ><input
                         type="checkbox"
@@ -1270,8 +1273,8 @@
                       />
                       Disable stock check
                     </label>
-                  </div>
-                  <div class="form-group">
+                  </div> -->
+                  <!-- <div class="form-group">
                     <label for="userName"
                       ><span id="rmv_img" class="btn btn-xs btn-warning"
                         >Remove</span
@@ -1280,7 +1283,7 @@
                     </label>
                     <div id="current_img"></div>
                     <input type="file" name="imagename" id="imagename" />
-                  </div>
+                  </div> -->
 
                   <input
                     type="submit"
@@ -2019,9 +2022,14 @@
           event.preventDefault(); // Prevent the default form submission
 
           // Collect form data
-          const formData = new FormData(event.target);
+          const formData = {
+            id: document.getElementById("product_id").value,
+            name: document.getElementById("productName").value,
+            price: document.getElementById("product_price").value,
+            quantity: document.getElementById("quantity").value,
+          };
 
-          // Make a POST request to your backend
+          // Make a POST request to your backend with JSON data
           axios
             .post("http://localhost:5000/submit-form", formData)
             .then((response) => {

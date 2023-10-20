@@ -17,7 +17,7 @@ const PORT = process.env.PORT; // server port
 // Route to test the server
 app.post("/submit-form", (req, res) => {
   const formData = req.body;
-  console.log(`Backend works  but form data doesn't pass to backend`);
+  console.log(formData);
   res.status(200).json({ message: "Form data received and processed." });
 });
 
