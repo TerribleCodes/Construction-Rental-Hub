@@ -3,15 +3,24 @@
   display: none;
 }
 
-#card-box tr {display: block; }
-#card-box th, #card-box td:first-child{ width: 10px; }
-#card-box th, #card-box td:nth-child(2){ width: 150px; }
-
-#cartTable tbody { 
-  display: block; 
-  height: calc(100vh - 425px);
-  overflow: auto;
+/* Set the width and height for the entire table */
+#cartTable {
+  width: 500px; /* Adjust the width as needed */
+  height: 410px; /* Adjust the height as needed */
 }
+
+/* Enable vertical scrolling for the table */
+#cartTable {
+  overflow-y: auto;
+}
+
+/* Set the width of individual columns (optional) */
+#cartTable th, #cartTable td {
+  width: auto; /* Reset column widths to default */
+}
+
+
+
 
 #parent { 
   display: block; 
