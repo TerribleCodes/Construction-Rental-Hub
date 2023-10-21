@@ -391,11 +391,9 @@
                 <div class="col-md-12">
                   <div class="row">
                     <div class="col-md-10">
-                      <select
-                        name=""
-                        id="customer"
-                        class="form-control"
-                      ></select>
+                      <h3>
+                        Customize this part as add new customer button --->
+                      </h3>
                     </div>
                     <div class="col-md-2">
                       <button
@@ -407,7 +405,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="input-group m-t-5">
+                  <!-- <div class="input-group m-t-5">
                     <form action="" id="searchBarCode">
                       <input
                         type="text"
@@ -424,7 +422,7 @@
                     <span class="input-group-addon" id="basic-addon2">
                       <i class="glyphicon glyphicon-ok"></i>
                     </span>
-                  </div>
+                  </div> -->
                 </div>
                 <div>
                   <table class="table m-0" id="cartTable">
@@ -528,179 +526,25 @@
                   </div>
                 </div>
                 <hr />
-                <div class="container" style="height: 525px; overflow-y: auto">
-                  <!--Add a scrollable to the container-->
-                  <div class="row" id="parent">
-                    <!--Adding images-->
-                    <div class="col-md-2" id="scaffoldings">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/scaff.png"
-                            alt="Scaffoldings"
-                          />
-                        </div>
-                        <div class="centered-text">Scaffoldings</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="handdrill">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/handdrill.jpg"
-                            alt="Hand Drill"
-                          />
-                        </div>
-                        <div class="centered-text">Hand Drill</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="willbarrow">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/will.jpeg" alt="Will" />
-                        </div>
-                        <div class="centered-text">Willbarrow</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="acrojack">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/acro.jpg" alt="acro" />
-                        </div>
-                        <div class="centered-text">Acro Jack</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="ladder">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/ladder.jpeg" alt="ladder" />
-                        </div>
-                        <div class="centered-text">Ladder</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="pipe">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/GIPipe.jpeg" alt="pipe" />
-                        </div>
-                        <div class="centered-text">GI Pipe</div>
-                      </a>
-                    </div>
-                    <!-- Add more image buttons as needed with col-md-1 class -->
-                    <div class="col-md-2" id="tilecutter">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/tilecutter.png" alt="tile" />
-                        </div>
-                        <div class="centered-text">Tile Cutter</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="grinder">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/grinder.jpeg" alt="grinder" />
-                        </div>
-                        <div class="centered-text">Grinder</div>
-                      </a>
-                    </div>
+                <div class="container">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Product Name</th>
+                        <th>Product ID</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="productTable">
+                      <!-- You can dynamically generate rows for each product here using JavaScript -->
+                    </tbody>
+                  </table>
 
-                    <div class="col-md-2" id="barcutter">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/barcutter.jpeg"
-                            alt="barcutter"
-                          />
-                        </div>
-                        <div class="centered-text">Bar Cutter</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id=" concretemixer">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/mixer.jpeg" alt="mixer" />
-                        </div>
-                        <div class="centered-text">Concrete Mixer</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="columnbox">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/columnbox.jpeg"
-                            alt="columnbox"
-                          />
-                        </div>
-                        <div class="centered-text">Column Box</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="hoist">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/hoist.jpeg" alt="hoist" />
-                        </div>
-                        <div class="centered-text">Hoist</div>
-                      </a>
-                    </div>
-
-                    <div class="col-md-2" id="chainsaw">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/chainsaw.jpg"
-                            alt="chainsaw"
-                          />
-                        </div>
-                        <div class="centered-text">Chainsaw</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="weldingmachine">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/weldingma.png"
-                            alt="welding"
-                          />
-                        </div>
-                        <div class="centered-text">Welding Machine</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="watermotor">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img
-                            src="assets/images/watermotor.jpg"
-                            alt="watermotor"
-                          />
-                        </div>
-                        <div class="centered-text">Watermotor</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="highpreasuregun">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/highpre.jpg" alt="highpre" />
-                        </div>
-                        <div class="centered-text">High Preasure Gun</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="router">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/router.jpg" alt="router" />
-                        </div>
-                        <div class="centered-text">Router</div>
-                      </a>
-                    </div>
-                    <div class="col-md-2" id="extensioncode">
-                      <a href="#" class="image-button">
-                        <div class="image-container">
-                          <img src="assets/images/wire.jpeg" alt="pipe" />
-                        </div>
-                        <div class="centered-text">Extension Code</div>
-                      </a>
-                    </div>
-                  </div>
+                  <button id="resetButton">Reset</button>
+                  <button id="submitButton">Submit</button>
                 </div>
               </div>
             </div>
@@ -1130,7 +974,7 @@
               <div class="modal-body">
                 <form id="saveCustomer" data-parsley-validate>
                   <div class="form-group">
-                    <label for="userName">Customer Name*</label>
+                    <label for="userName">Customer Name</label>
                     <input
                       type="text"
                       required="required"
@@ -2041,6 +1885,117 @@
               console.error(error);
             });
         });
+    </script>
+    <script>
+      // Fetch product data from the server
+      const products = [
+        {
+          name: "Scaffoldings",
+          id: "scaffoldings",
+          price: 10.0,
+          stock: 50,
+        },
+        {
+          name: "Drills",
+          id: "scaffoldings",
+          price: 10.0,
+          stock: 50,
+        },
+        // Add more products here
+      ];
+      // axios
+      //   .get("/products")
+      //   .then((response) => {
+      //     const products = response.data;
+
+      //     // Add product rows to the table (similar to the previous example)
+      //     const productTable = document.getElementById("productTable");
+      //     products.forEach((product) => {
+      //       productTable.appendChild(createTableRow(product));
+      //     });
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+
+      // Function to create a table row for a product
+      function createTableRow(product) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+    <td>${product.name}</td>
+    <td>${product.id}</td>
+    <td>$${product.price}</td>
+    <td>${product.stock}</td>
+    <td>
+      <input type="number" id="${product.id}-quantity" value="0" min="0" max="${product.stock}">
+    </td>
+    <td>
+      <button class="add-button" data-product-id="${product.id}">+</button>
+      <button class="subtract-button" data-product-id="${product.id}">-</button>
+    </td>
+  `;
+
+        return row;
+      }
+
+      // Add product rows to the table
+      const productTable = document.getElementById("productTable");
+      products.forEach((product) => {
+        productTable.appendChild(createTableRow(product));
+      });
+
+      // Add event listeners for + and - buttons
+      document.querySelectorAll(".add-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const productId = button.getAttribute("data-product-id");
+          const quantityInput = document.getElementById(
+            `${productId}-quantity`
+          );
+          const currentQuantity = parseInt(quantityInput.value, 10);
+          if (
+            currentQuantity <
+            products.find((product) => product.id === productId).stock
+          ) {
+            quantityInput.value = currentQuantity + 1;
+          }
+        });
+      });
+
+      document.querySelectorAll(".subtract-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const productId = button.getAttribute("data-product-id");
+          const quantityInput = document.getElementById(
+            `${productId}-quantity`
+          );
+          const currentQuantity = parseInt(quantityInput.value, 10);
+          if (currentQuantity > 0) {
+            quantityInput.value = currentQuantity - 1;
+          }
+        });
+      });
+
+      // Event listener for the reset button
+      document.getElementById("resetButton").addEventListener("click", () => {
+        document.querySelectorAll("input[type='number']").forEach((input) => {
+          input.value = 0;
+        });
+      });
+
+      // Event listener for the submit button
+      document.getElementById("submitButton").addEventListener("click", () => {
+        // Collect the data from the table and perform additional math here
+        // You can access the quantities with document.getElementById and calculate the total cost, etc.
+        // For this example, let's just log the quantities:
+        products.forEach((product) => {
+          const productId = product.id;
+          const quantityInput = document.getElementById(
+            `${productId}-quantity`
+          );
+          console.log(
+            `Product: ${product.name}, Quantity: ${quantityInput.value}`
+          );
+        });
+      });
     </script>
   </body>
 </html>

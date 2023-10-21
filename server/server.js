@@ -77,6 +77,36 @@ app.post("/insert-customer", async (req, res) => {
 
 // TODO
 
+// Fetch the products to the frontend
+// app.get("/products", async (req, res) => {
+//   try {
+//     const connection = await oracledb.getConnection({
+//       user: process.env.DB_USER,
+//       password: process.env.DB_PASSWORD,
+//       connectString: process.env.DB_CONNECTION_STRING,
+//     });
+
+//     const query = "SELECT name, id, price, stock FROM products";
+//     const result = await connection.execute(query);
+
+//     connection.close();
+
+//     const products = result.rows.map((row) => ({
+//       name: row[0],
+//       id: row[1],
+//       price: row[2],
+//       stock: row[3],
+//     }));
+
+//     res.json(products);
+//   } catch (error) {
+//     console.error(error);
+//     res
+//       .status(500)
+//       .json({ error: "An error occurred while fetching product data" });
+//   }
+// });
+
 // CRUD for the customers_table
 
 // CRUD for the products_table
