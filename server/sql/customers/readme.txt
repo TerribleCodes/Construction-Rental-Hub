@@ -1,0 +1,1 @@
+drop if the file name ends with or contains "***customers.sql"
