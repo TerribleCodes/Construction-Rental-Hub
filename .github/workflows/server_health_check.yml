@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          
+      - name: Set Working Directory
+        run: cd server
 
       - name: Install Dependencies
         run: npm install
