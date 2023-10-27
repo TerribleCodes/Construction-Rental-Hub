@@ -3,10 +3,10 @@ name: Server Health Check
 on:
   push:
     branches:
-      - main
+      - main 
   pull_request:
     branches:
-      - main
+      - main 
 
 jobs:
   server_health_check:
@@ -19,10 +19,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          
+          node-version: 18 
+
       - name: Set Working Directory
-        run: cd server
+        run: cd server 
 
       - name: Install Dependencies
         run: npm install
@@ -44,4 +44,4 @@ jobs:
           fi
 
       - name: Stop the Server
-        run: pkill -f "node server.js" || true
+        run: pkill -f "node server.js" || true 
