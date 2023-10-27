@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: Set Working Directory
+        run: cd /home/runner/work/Construction-Rental-Hub/server # Set the correct path
+
       - name: Install Dependencies
         run: npm install
 
