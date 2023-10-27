@@ -5,15 +5,6 @@
 
 - After cloning the repository run the following commands
 
-```shell
-    # From the root folder
-    cd client
-    npm init
-
-    cd ../server
-    npm init # As I remember 😅
-```
-
 ## To run the both client and server at the same time, PowerShell or Git Bash can be used. Before running the script, install the dependencies first
 
 ```shell
