@@ -22,7 +22,7 @@ jobs:
           node-version: 18 
 
       - name: Set Working Directory
-        run: cd server 
+        run: cd Construction-Rental-Hub/server 
 
       - name: Install Dependencies
         run: npm install
