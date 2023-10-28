@@ -15,7 +15,7 @@ router.get("/all-customers", async (req, res) => {
 
     const sqlFilePath = path.join(
       __dirname,
-      "../sql/products",
+      "../sql/customers",
       "get-customers.sql"
     );
     const sqlQuery = fs.readFileSync(sqlFilePath, "utf8");
@@ -47,7 +47,6 @@ router.post("/customer-by-nic", async (req, res) => {
     );
     const sqlQuery = fs.readFileSync(sqlFilePath, "utf8");
 
-    // Execute the SQL query with the NIC parameter
     const result = await connection.execute(sqlQuery, [nic]);
 
     res.json({ result: result.rows });
@@ -95,9 +94,50 @@ router.post("/insert-customer", async (req, res) => {
 
 // Insert multiple records
 router.post("/insert-multiple-customers", async (req, res) => {
-  res.json(
-    `Oracle's Node.js driver is not straightforward when it comes to handling PL/SQL tables (arrays) as bind variables`
-  );
+  try {
+    const customerDataArray = req.body;
+
+    // Establish a connection to the Oracle database
+    const connection = await oracledb.getConnection({
+      user: "HR",
+      password: "123",
+      connectString: "localhost/xe",
+    });
+
+    const insertCustomerSql = `
+      INSERT INTO CUSTOMERS (CUSTOMER_NIC, CUSTOMER_NAME, CUSTOMER_PHONE, CUSTOMER_EMAIL, CUSTOMER_ADDRESS)
+      VALUES (:CUSTOMER_NIC, :CUSTOMER_NAME, :CUSTOMER_PHONE, :CUSTOMER_EMAIL, :CUSTOMER_ADDRESS)
+    `;
+
+    for (const customerData of customerDataArray) {
+      const {
+        CUSTOMER_NIC,
+        CUSTOMER_NAME,
+        CUSTOMER_PHONE,
+        CUSTOMER_EMAIL,
+        CUSTOMER_ADDRESS,
+      } = customerData;
+
+      const result = await connection.execute(insertCustomerSql, {
+        CUSTOMER_NIC,
+        CUSTOMER_NAME,
+        CUSTOMER_PHONE,
+        CUSTOMER_EMAIL,
+        CUSTOMER_ADDRESS,
+      });
+
+      await connection.commit();
+    }
+
+    await connection.close();
+
+    res.status(200).json({ message: "Customers inserted successfully" });
+  } catch (error) {
+    console.error("Error:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while inserting customers" });
+  }
 });
 
 // Update a single record
