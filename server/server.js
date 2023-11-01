@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(bodyParser.json());
 const PORT = process.env.PORT;
 
 const customerRoute = require("./routes/customers");

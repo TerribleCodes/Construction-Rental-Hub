@@ -9,7 +9,7 @@ const dbConfig = {
   connectString: "localhost/xe",
 };
 
-// Works with POSTMAN :3 Not with the frontend
+// There's an error associated with passing data via frontend due to data types. But works fine with POSTMAN.
 router.post("/insert-product", async (req, res) => {
   const { product_id, name, price, stock } = req.body;
 
@@ -38,6 +38,22 @@ router.post("/insert-product", async (req, res) => {
   } catch (error) {
     console.error("Error inserting data:", error);
     res.status(500).json({ error: "Failed to insert data." });
+  }
+});
+
+// Works with frontend :3
+router.get("/products", async (req, res) => {
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    const sql = "SELECT * FROM products";
+    const result = await connection.execute(sql);
+    connection.close();
+
+    const products = result.rows;
+    res.json(products);
+  } catch (error) {
+    console.error("Error fetching product data:", error);
+    res.status(500).json({ error: "Failed to fetch product data." });
   }
 });
 
