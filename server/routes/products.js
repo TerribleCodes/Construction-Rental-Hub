@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const oracledb = require("oracledb");
-const { error } = require("console");
 
 const dbConfig = {
-  user: "dbadmin",
-  password: "S0jF27lOk",
-  connectString: "localhost/xe",
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  connectString: process.env.DB_CONNECT_STRING,
 };
 
 // There's an error associated with passing data via frontend due to data types. But works fine with POSTMAN.
@@ -41,7 +40,6 @@ router.post("/insert-product", async (req, res) => {
   }
 });
 
-// Works with frontend :3
 router.get("/products", async (req, res) => {
   try {
     const connection = await oracledb.getConnection(dbConfig);
