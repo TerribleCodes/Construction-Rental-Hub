@@ -15,6 +15,8 @@ const customerRoute = require("./routes/customers");
 app.use("/customers", customerRoute);
 const productsRoute = require("./routes/products");
 app.use("/products", productsRoute);
+const rentalRoute = require("./routes/rental");
+app.use("/rental", rentalRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
