@@ -56,3 +56,10 @@
     "html-webpack-plugin": "^5.5.3"
   }
 }
+BEGIN
+  FOR i IN 1 .. :productData.COUNT LOOP
+    DELETE FROM products
+    WHERE product_id = :productData(i).product_id;
+  END LOOP;
+  COMMIT;
+END;
